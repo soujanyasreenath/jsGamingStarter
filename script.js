@@ -1,9 +1,15 @@
 const cards = document.querySelectorAll(".card");
 
+// number of pairs matched
 let matched = 0;
+
+// keeps track of the selected card
 let cardOne, cardTwo;
+
+// If matched, should not be selected
 let disableDeck = false;
 
+// function on click of a card
 function flipCard({target: clickedCard}) {
     if(cardOne !== clickedCard && !disableDeck) {
         clickedCard.classList.add("flip");
@@ -21,7 +27,7 @@ function flipCard({target: clickedCard}) {
 function matchCards(img1, img2) {
     if(img1 === img2) {
         matched++;
-        if(matched == 8) {
+        if(matched == 1) {
             setTimeout(() => {
                 return shuffleCard();
             }, 1000);
